@@ -590,11 +590,11 @@ function parseObj(objstr, loader) {
 
         if (mtlpath !== undefined) {
             if (!loader) {
-                throw new Error(`Can't load mtllib ${mtlpath} without a loader`);
+                reject(new Error(`Can't load mtllib ${mtlpath} without a loader`));
             }
             loader(mtlpath).then(mtldata => {
                 resume(mtldata);
-            });
+            }).catch(reject);
         } else {
             resume();
         }
