@@ -586,21 +586,4 @@ function parseObj(objstr, loader) {
     });
 }
 
-const fs = require("fs");
-
-const loader = path => {
-    return new Promise((resolve, reject) => {
-        fs.readFile(path, "utf8", (err, data) => {
-            if (err || !data) {
-                reject(err || "No data");
-            } else {
-                resolve(data);
-            }
-        });
-    });
-};
-
-var buf = fs.readFileSync("./teapot.obj", "utf8");
-parseObj(buf, loader).then(data => {
-    console.log("data", data);
-});
+module.exports = parseObj;
