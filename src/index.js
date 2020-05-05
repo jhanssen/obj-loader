@@ -474,7 +474,7 @@ function parseObj(objstr, loader) {
             let vcnt = 0, ncnt = 0, tcnt = 0;
             let shapecnt = 0;
 
-            let materialId = 0;
+            let materialId = -1;
             for (const cmd of cmds) {
                 switch (cmd.type) {
                 case ObjCommand.CmdUseMtl:
