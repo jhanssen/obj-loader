@@ -472,7 +472,6 @@ function parseObj(objstr, loader) {
             const materialIds = [];
             const faceNumVerts = [];
             let vcnt = 0, ncnt = 0, tcnt = 0;
-            let shapecnt = 0;
 
             let materialId = -1;
             for (const cmd of cmds) {
@@ -515,15 +514,9 @@ function parseObj(objstr, loader) {
                         faceNumVerts.push(numVerts[i]);
                     }
                     break;
-                case ObjCommand.CmdO:
-                case ObjCommand.CmdG:
-                    ++shapecnt;
-                    break;
                 }
             }
 
-            // calculate number of shapes
-            //console.log("shapes", shapecnt);
             let shapes = [];
             let prevName = undefined;
             let prevShapeFaceOffset = 0;
