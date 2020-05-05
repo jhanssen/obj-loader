@@ -1,7 +1,5 @@
 // port of https://github.com/syoyo/tinyobjloader-c/ to JS
 
-const MaxFacesPerFLine = 16;
-
 class ObjCommand
 {
     constructor(cmdtype) {
