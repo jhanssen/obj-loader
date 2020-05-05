@@ -295,7 +295,7 @@ function parseTriple(str)
 function parseFace(cmds, tokens, triangulate)
 {
     var fs = [], nfs = [];
-    let numF = tokens.let;
+    let numF = tokens.length;
     let numFNumVerts = 0;
     for (let i = 1; i < tokens.length; ++i) {
         fs.push(parseTriple(tokens[i]));
@@ -581,7 +581,8 @@ function parseObj(objstr, loader) {
                     faces: faces,
                     numFaces: numF,
                     numFaceNumVerts: numFaces,
-                    materialId: materialIds
+                    materialId: materialIds,
+                    materials: matarray
                 },
                 shapes: shapes
             });
