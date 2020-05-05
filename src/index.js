@@ -481,6 +481,8 @@ function parseObj(objstr, loader) {
                     const mat = matmap.get(cmd.name);
                     if (mat) {
                         materialId = mat.id;
+                    } else {
+                        materialId = -1;
                     }
                     break;
                 case ObjCommand.CmdV:
