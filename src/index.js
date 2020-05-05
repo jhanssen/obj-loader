@@ -83,7 +83,6 @@ class Material
         this._Ns = undefined; // shininess
         this._illum = undefined; // illum model
         this._d = undefined; // dissolve
-        this._Tr = undefined; //
         this._map_Ka = undefined; // ambient texture
         this._map_Kd = undefined; // diffuse texture
         this._map_Ks = undefined; // specular texture
@@ -167,14 +166,6 @@ class Material
 
     set d(v) {
         this._d = v;
-    }
-
-    get tr() {
-        return this._Tr;
-    }
-
-    set tr(v) {
-        this._Tr = v;
     }
 
     get map_Ka() {
