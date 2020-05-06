@@ -507,10 +507,10 @@ function parseObj(objstr, loader) {
                         const vtIdx = fixIndex(face[1], tcnt);
                         const vnIdx = fixIndex(face[2], ncnt);
                         faces.push([vIdx, vnIdx, vtIdx]);
+                        materialIds.push(materialId);
                     }
                     const numVerts = cmd.numVerts;
                     for (var i = 0; i < cmd.numFNumVerts; ++i) {
-                        materialIds.push(materialId);
                         faceNumVerts.push(numVerts[i]);
                     }
                     break;
