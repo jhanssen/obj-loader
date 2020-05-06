@@ -506,7 +506,7 @@ function parseObj(objstr, loader) {
                         const vIdx = fixIndex(face[0], vcnt);
                         const vtIdx = fixIndex(face[1], tcnt);
                         const vnIdx = fixIndex(face[2], ncnt);
-                        faces.push([vIdx, vtIdx, vnIdx]);
+                        faces.push([vIdx, vnIdx, vtIdx]);
                     }
                     const numVerts = cmd.numVerts;
                     for (var i = 0; i < cmd.numFNumVerts; ++i) {
