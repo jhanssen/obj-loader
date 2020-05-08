@@ -326,7 +326,7 @@ function fixIndex(idx, n)
     return n + idx; /* negative value = relative */
 }
 
-function parseObj(objstr, loader) {
+function parseObj(objstr, loader, triangulate) {
     return new Promise((resolve, reject) => {
         const cmds = [];
 
@@ -355,7 +355,7 @@ function parseObj(objstr, loader) {
                 ++numVT;
                 break;
             case "f":
-                parseFace(cmds, tokens);
+                parseFace(cmds, tokens, triangulate);
                 numF += cmds[cmds.length - 1].numF;
                 numFaces += cmds[cmds.length - 1].numFNumVerts;
                 break;
