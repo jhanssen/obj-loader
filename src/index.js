@@ -522,11 +522,20 @@ function parseObj(objstr, loader) {
             let prevShapeFaceOffset = 0;
             let prevFaceOffset = 0;
             let faceCount = 0;
+            materialId = -1;
 
             for (const cmd of cmds) {
                 switch (cmd.type) {
+                case ObjCommand.CmdUseMtl:
+                    const mat = matmap.get(cmd.name);
+                    if (mat) {
+                        materialId = mat.id;
+                    } else {
+                        materialId = -1;
+                    }
+                    break;
                 case ObjCommand.CmdF:
-                    ++faceCount;
+                    faceCount += cmd.faces.length;
                     break;
                 case ObjCommand.CmdO:
                 case ObjCommand.CmdG:
